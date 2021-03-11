@@ -22,5 +22,7 @@ namespace CarRental.Data
         public int ReservationInfoId { get; set; }
         public virtual ReservationInfo ReservationInfo { get; set; }
 
+
+
     }
 }
