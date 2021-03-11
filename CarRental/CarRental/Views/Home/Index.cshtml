@@ -1,8 +1,181 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!-- Reservation Home Page -->
+<a id="hyperlink-res"></a>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="reservation-bgimage">
+    <div class="container">
+
+        <div class="container-text-title">
+            <h1>Rent a car!</h1>
+        </div>
+
+
+        <div class="container">
+            <div class="form">
+                <form id="reservation-form">
+
+
+                    <div class="row-first-reservation">
+                        <div class="row-first-reservation-pickup">
+                            <label>
+                                <span class="reserv-pickup-label">Pick-up Date/Time</span>
+                            </label>
+                            <div class="row-1st-res-pu-date">
+                                <input class="res-pu-date" type="date" placeholder="03/04/2021" required>
+                            </div>
+                            <div class="row-1st-res-pu-time">
+                                <input class="res-pu-time" type="time" required>
+                            </div>
+                        </div>
+                        <div class="row-1st-res-return">
+                            <label>
+                                <span class="res-return-label">Return Date/Time</span>
+                            </label>
+                            <div class="row-1st-res-return-date">
+                                <input class="res-return-date" type="date" required>
+                            </div>
+                            <div class="row-1st-res-return-time">
+                                <input class="res-return-time" type="time" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <br><br><br><br><br>
+                    <div class="row-2nd-res">
+                        <div class="row-2nd-car">
+                            <label>
+                                <span class="res-car-label">Vehicle</span><br>
+                            </label>
+                            <!--<input class="res-car" type="text" placeholder="Enter the vehicle you want to rent here..."> -->
+                            <select id="res-car">
+                                <option disabled selected>-- Choose a vehicle --</option>
+
+                                <option>*HOT* Audi A4 2010 - ONLY 30$/day</option>
+                                <option>*HOT* Mercedes-Benz S 350d 2017 - 130$/day</option>
+                                <option>*HOT* Honda CR-V 2018 - ONLY 70$/day</option>
+
+                                <option>Hyundai Accent 2020 - 40$/day</option>
+                                <option>Nissan Sentra 2020 - 41$/day</option>
+                                <option>Kia Rio 2020 - 45$/day</option>
+                                <option>Nissan Rogue 2020 - 44$/day</option>
+                                <option>Volkswagen Jetta 2020 - 47$/day</option>
+                                <option>Ford EcoSport 2020 - 57$/day</option>
+                                <option>Kia Sportage 2020 - 51$/day</option>
+                                <option>Chrysler 300 2020 - 66$/day</option>
+                                <option>Cadillac ATS 2020 - 75$/day</option>
+                                <option>Land Rover Discovery 2020 - 107$/day</option>
+                                <option>BMW X1 2020 - 104$/day</option>
+                            </select>
+
+                        </div>
+                        <div class="row-2nd-user">
+                            <label>
+                                <span class="res-user-label">Username</span>
+                            </label>
+                            <input class="res-user" type="text" placeholder="Enter your desired username" required>
+                        </div>
+                        <div class="row-2nd-tel">
+                            <label>
+                                <span class="res-tel-lable">Telephone number</span>
+                            </label>
+                            <input class="res-tel" type="tel" value="+359" required>
+                        </div>
+                    </div>
+                    <div class="row-3d-res">
+                        <div class="row-3d-pu-loc">
+                            <label>
+                                <span class="res-pu-loc-lable">Pick-up location</span>
+                            </label>
+                            <!-- <input class="res-pu-loc" type="text" placeholder="Country,Town,Street, Number" required> -->
+                            <select id="res-pu-loc" required>
+                                <option disabled selected>-- Choose a location --</option>
+
+                                <option>USA, NYC Hurley Avenue 32</option>
+                                <option>USA, NYC Jersey Avenue 22</option>
+                                <option>USA, Philadelphia Burgym Avenue 107</option>
+                            </select>
+
+                        </div>
+                        <div class="row-3d-return-loc">
+                            <label>
+                                <span class="res-return-loc-lable">Return location</span>
+                            </label>
+                            <!-- <input class="res-return-loc" type="text" placeholder="Country,Town,Street, Number" required> -->
+                            <select id="res-return-loc" required>
+                                <option disabled selected>-- Choose a location --</option>
+
+                                <option>USA, NYC Hurley Avenue 32</option>
+                                <option>USA, NYC Jersey Avenue 22</option>
+                                <option>USA, Philadelphia Burgym Avenue 107</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="res-submit-button">
+                        <button type="submit" class="res-button">
+                            <span class="wc-editable wc-disable-inline-edit" data-pk="ws_btn_make_reservation" data-type="action">Make reservation</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="team-will-contact">
+                <p>Our team will be in contact with you after you make your reservation, as soon as possible!</p>
+            </div>
+
+        </div>
+    </div>
 </div>
+<!-- Reservation Home Page End -->
+<!-- Best Offers Section -->
+<div class="best-offers">
+    <div class="best-offers-content">
+        <div class="bst-of-title">
+            <h2 class="bst-of-ttl-h2">BEST OFFERS</h2>
+        </div>
+        <div class="row">
+            <div class="bst-of-1st">
+                <div class="bst-of-1st-img">
+                    <img src="images/best-offers-audia4-2010.jpg">
+                </div>
+                <div class="bst-of-1st-text">
+                    <h3 class="bst-of-1st-t-h3">Audi A4 2010 - <em> ONLY 30$/day</em></h3>
+                </div>
+            </div>
+            <div class="bst-of-2nd">
+                <div class="bst-of-2nd-img">
+                    <img src="images/best-offers-mercedes-s350d-2017.jpg" height="300px">
+                </div>
+                <div class="best-of-2nd-text">
+                    <h3 class="bst-of-2nd-t-h3">Mercedes-Benz S 350d 2017 - <em> ONLY 130$/day</em></h3>
+                </div>
+            </div>
+            <div class="bst-of-3d">
+                <div class="bst-of-3d-img">
+                    <img src="images/best-offers-honda-crv-2018.webp" height="300px">
+                </div>
+                <div class="bst-of-3d-text">
+                    <h3 class="bst-of-3d-t-h3">Honda CR-V 2018 - <em>ONLY 70$/day</em></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BEST OFFERS END -->
+<!-- ABOUT US -->
+<a id="hyperlink-au"></a>
+<div id="aboutus-container">
+    <div id="au-bg-img">
+        <div id="au-title-text">
+            <h2 id="au-title">About our company</h2>
+        </div>
+        <div id="au-moto">
+            <h3 id="au-moto-text">This is our moto!</h3>
+        </div>
+        <div id="au-desc">
+            <span id="au-desc-text">The description of our company.</span> <br><br>
+        </div>
+    </div>
+</div>
+<!-- ABOUT US END -->
+</html>
