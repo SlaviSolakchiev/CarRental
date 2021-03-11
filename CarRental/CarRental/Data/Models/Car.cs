@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRental.Data.Enumerations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -33,7 +34,7 @@ namespace CarRental.Data.Models
 
 
 
-        public double? PriceForHour { get; set; }
+        public double? PriceForDay { get; set; }
 
 
         [Required]
@@ -49,8 +50,7 @@ namespace CarRental.Data.Models
 
 
 
-        [ForeignKey(nameof(Category))]
-        public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public Categories Category { get; set; }
+
     }
 }
