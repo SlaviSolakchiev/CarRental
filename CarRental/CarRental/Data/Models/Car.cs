@@ -1,5 +1,4 @@
-﻿using CarRental.Data.Enumerations;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -48,9 +47,6 @@ namespace CarRental.Data.Models
         [Required]
         public bool Rented { get; set; }
 
-
-
-        public Categories Category { get; set; }
 
     }
 }
