@@ -1,4 +1,5 @@
-﻿using CarRental.Data.Models;
+﻿using CarRental.Data.Enumerations;
+using CarRental.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,7 +16,6 @@ namespace CarRental.Data
         }
 
         public DbSet<Car> Cars { get; set; }
-        public DbSet<Category> Categories { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<ReservationInfo> ReservationInfos { get; set; }
 
@@ -32,12 +32,12 @@ namespace CarRental.Data
                .WithMany(pl => pl.ReservationInfosForReturnLocations)
                 .OnDelete(DeleteBehavior.NoAction);
 
-              builder.Entity<ReservationInfo>()
-               .HasOne(ri => ri.User)
-               .WithOne(au => au.ReservationInfo)
-                .OnDelete(DeleteBehavior.NoAction);
+            builder.Entity<ReservationInfo>()
+             .HasOne(ri => ri.User)
+             .WithOne(au => au.ReservationInfo)
+              .OnDelete(DeleteBehavior.NoAction);
 
-            base.OnModelCreating(builder);
+
         }
     }
 }
