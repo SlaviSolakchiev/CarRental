@@ -1,49 +1,99 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @*<meta charset="utf-8" />*@
+
     <title>@ViewData["Title"] - CarRental</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Normalize.css -->
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+
+    <link rel="stylesheet" href="~/style.css">
+
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CarRental</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+<body id="body">
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav id="nav-bar">
+            <div class="nav-bar-header">
+                <h2 class="page-Title">Car <em>Rental</em></h2>
+            </div>
+
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+
+            </button> -->
+            <div class="nav-select">
+                <ul class="nav-bar">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"> Home </a>
+                    </li>
+                    <!--<li class = "nav-item">
+                        <a class="nav-link" href="fleet.html"> Fleet </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hyperlink-res"> Reservation </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hyperlink-au">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hyperlink-cu">Contact Us</a>
+                    </li>
+
+                </ul>
             </div>
         </nav>
     </header>
+    <!-- Header End -->
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - CarRental - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+
+    <!-- FOOTER -->
+    <a id="hyperlink-cu"></a>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-contact-info">
+                <div class="footer-tel">
+                    <div class="footer-icon-tel">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <div class="footer-tel-cont">Call us now</div>
+                    <div class="footer-tel-num">
+                        <a href="tel:1234567890">
+                            <span class="footer-tel-text">1234567890</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-mail">
+                    <div class="footer-icon-tel">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <div class="footer-mail-cont">Or send us a message</div>
+                    <div class="footer-mail-l">
+                        <a href="mailto:contact@rentacar.com">
+                            contact@rentacar.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="footer-cop-text">
+                    <p>&copy;2021 CAR RENTAL COMPANY || ALL RIGHTS RESERVED</p>
+                </div>
+            </div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
 </body>
 </html>
