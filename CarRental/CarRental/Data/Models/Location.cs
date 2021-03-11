@@ -19,6 +19,13 @@ namespace CarRental.Data.Models
         public int Id { get; set; }
 
 
+
+        [Required]
+        [MinLength(2)]
+        [MaxLength(50)]
+        public string Country { get; set; }
+
+
         [Required]
         [MinLength(2)]
         [MaxLength(50)]
@@ -37,6 +44,7 @@ namespace CarRental.Data.Models
         public string Street { get; set; }
 
 
+        public int? Number { get; set; }
 
 
         [InverseProperty("ReturnLocation")]
