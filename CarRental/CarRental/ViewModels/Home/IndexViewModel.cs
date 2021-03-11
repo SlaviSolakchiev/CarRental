@@ -28,15 +28,6 @@ namespace CarRental.ViewModels.Home
         //[BindProperty, DataType(DataType.Date)]
         public DateTime PickUpDate { get; set; }
 
-
-        [Required]
-        [BindProperty, DataType(DataType.Time)]
-        public DateTime PickUpTime { get; set; }
-
-        
-
-
-
         [Required]        
         //[BindProperty, DataType(DataType.Date)]
         public DateTime ReturnDate { get; set; }
@@ -44,10 +35,15 @@ namespace CarRental.ViewModels.Home
 
 
 
-        [Required]
-        [BindProperty, DataType(DataType.Time)]
-        public DateTime ReturnTime { get; set; }
-        [Required]
+        //[Required]
+        //[BindProperty, DataType(DataType.Time)]
+        //public DateTime PickUpTime { get; set; }
+
+        //[Required]
+        //[BindProperty, DataType(DataType.Time)]
+        //public DateTime ReturnTime { get; set; }
+        //[Required]
+
  
 
 

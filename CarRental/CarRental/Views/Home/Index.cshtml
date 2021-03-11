@@ -1,6 +1,14 @@
-﻿<!-- Reservation Home Page -->
-<a id="hyperlink-res"></a>
+﻿@using CarRental.ViewModels.Home
+@using CarRental.Data.Models
+@model IndexViewModel
 
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@*Reservation Home Page*@
 <div class="reservation-bgimage">
     <div class="container">
 
@@ -11,103 +19,110 @@
 
         <div class="container">
             <div class="form">
-                <form id="reservation-form">
+                <form id="reservation-form" method="post" asp-controller="Home" asp-action="Index" class="w-50">
 
 
                     <div class="row-first-reservation">
                         <div class="row-first-reservation-pickup">
-                            <label>
+                            <label asp-for="PickUpDate">
                                 <span class="reserv-pickup-label">Pick-up Date/Time</span>
                             </label>
                             <div class="row-1st-res-pu-date">
-                                <input class="res-pu-date" type="date" placeholder="03/04/2021" required>
+                                <input class="res-pu-date" type="date" asp-for="PickUpDate" />
                             </div>
+                            @*<span asp-validation-for="PickUpDate"></span>*@
+
                             <div class="row-1st-res-pu-time">
-                                <input class="res-pu-time" type="time" required>
+                                <input class="res-pu-time" type="time" asp-for="PickUpDate" />
                             </div>
+                            @*<span asp-validation-for="PickUpTime"></span>*@
                         </div>
+
+
                         <div class="row-1st-res-return">
-                            <label>
+                            <label asp-for="ReturnDate">
                                 <span class="res-return-label">Return Date/Time</span>
                             </label>
+
                             <div class="row-1st-res-return-date">
-                                <input class="res-return-date" type="date" required>
+                                <input class="res-return-date" type="date" asp-for="ReturnDate" />
                             </div>
+                            @*<span asp-validation-for="ReturnDate"></span>*@
+
                             <div class="row-1st-res-return-time">
-                                <input class="res-return-time" type="time" required>
+                                <input class="res-return-time" type="time" asp-for="ReturnDate" />
                             </div>
+                            @*<span asp-validation-for="ReturnTime"></span>*@
                         </div>
                     </div>
+
+
 
 
                     <br><br><br><br><br>
                     <div class="row-2nd-res">
                         <div class="row-2nd-car">
-                            <label>
+                            <label asp-for="Car">
                                 <span class="res-car-label">Vehicle</span><br>
                             </label>
-                            <!--<input class="res-car" type="text" placeholder="Enter the vehicle you want to rent here..."> -->
-                            <select id="res-car">
-                                <option disabled selected>-- Choose a vehicle --</option>
 
-                                <option>*HOT* Audi A4 2010 - ONLY 30$/day</option>
-                                <option>*HOT* Mercedes-Benz S 350d 2017 - 130$/day</option>
-                                <option>*HOT* Honda CR-V 2018 - ONLY 70$/day</option>
-
-                                <option>Hyundai Accent 2020 - 40$/day</option>
-                                <option>Nissan Sentra 2020 - 41$/day</option>
-                                <option>Kia Rio 2020 - 45$/day</option>
-                                <option>Nissan Rogue 2020 - 44$/day</option>
-                                <option>Volkswagen Jetta 2020 - 47$/day</option>
-                                <option>Ford EcoSport 2020 - 57$/day</option>
-                                <option>Kia Sportage 2020 - 51$/day</option>
-                                <option>Chrysler 300 2020 - 66$/day</option>
-                                <option>Cadillac ATS 2020 - 75$/day</option>
-                                <option>Land Rover Discovery 2020 - 107$/day</option>
-                                <option>BMW X1 2020 - 104$/day</option>
+                            <select id="res-car" asp-for="Car" asp-items="@(Model.CarItems)">
+                                <option value="" disabled selected>Enter the vehicle you want to rent here...</option>
                             </select>
-
+                            <span asp-validation-for="Car"></span>
                         </div>
+
+
                         <div class="row-2nd-user">
-                            <label>
+                            <label asp-for="UserName">
                                 <span class="res-user-label">Username</span>
                             </label>
-                            <input class="res-user" type="text" placeholder="Enter your desired username" required>
+                            <input class="res-user" asp-for="UserName" placeholder="Enter your desired username" />
+                            <span asp-validation-for="UserName"></span>
                         </div>
+
+
+                        @*<div class="row-2nd-user">
+                                <label>
+                                    <span class="res-user-label">Username</span>
+                                </label>
+                                <input class="res-user" type="text" placeholder="Enter your desired username" required>
+                            </div>*@
+
+
+
+
                         <div class="row-2nd-tel">
-                            <label>
+                            <label asp-for="TelephoneNumber">
                                 <span class="res-tel-lable">Telephone number</span>
                             </label>
-                            <input class="res-tel" type="tel" value="+359" required>
+                            <input class="res-tel" asp-for="TelephoneNumber" type="tel" value="+359" />
+                            <span asp-validation-for="TelephoneNumber"></span>
                         </div>
                     </div>
+
+
+
                     <div class="row-3d-res">
                         <div class="row-3d-pu-loc">
-                            <label>
+                            <label asp-for="PickUpLocation">
                                 <span class="res-pu-loc-lable">Pick-up location</span>
                             </label>
-                            <!-- <input class="res-pu-loc" type="text" placeholder="Country,Town,Street, Number" required> -->
-                            <select id="res-pu-loc" required>
-                                <option disabled selected>-- Choose a location --</option>
 
-                                <option>USA, NYC Hurley Avenue 32</option>
-                                <option>USA, NYC Jersey Avenue 22</option>
-                                <option>USA, Philadelphia Burgym Avenue 107</option>
+                            <select id="res-pu-loc" asp-for="PickUpLocation" class="form-control" asp-items="@Model.LocationItems">
+                                <option value="" disabled selected>-- Choose a location --</option>
                             </select>
-
+                            <span asp-validation-for="PickUpLocation"></span>
                         </div>
+
                         <div class="row-3d-return-loc">
-                            <label>
+                            <label asp-for="ReturnLocation">
                                 <span class="res-return-loc-lable">Return location</span>
                             </label>
-                            <!-- <input class="res-return-loc" type="text" placeholder="Country,Town,Street, Number" required> -->
-                            <select id="res-return-loc" required>
-                                <option disabled selected>-- Choose a location --</option>
-
-                                <option>USA, NYC Hurley Avenue 32</option>
-                                <option>USA, NYC Jersey Avenue 22</option>
-                                <option>USA, Philadelphia Burgym Avenue 107</option>
+                            <select id="res-return-loc" asp-for="ReturnLocation" class="form-control" asp-items="@(Model.LocationItems)">
+                                <option value="" disabled selected>-- Choose a location --</option>
                             </select>
+                            <span asp-validation-for="ReturnLocation"></span>
                         </div>
                     </div>
 
@@ -119,15 +134,16 @@
                     </div>
                 </form>
             </div>
+
             <div class="team-will-contact">
-                <p>Our team will be in contact with you after you make your reservation, as soon as possible!</p>
+                <p>Our team will be in contact with you after you make your reservation as soon as possible!</p>
             </div>
 
         </div>
     </div>
 </div>
-<!-- Reservation Home Page End -->
-<!-- Best Offers Section -->
+@*Reservation Home Page End
+    Best Offers Section*@
 <div class="best-offers">
     <div class="best-offers-content">
         <div class="bst-of-title">
@@ -161,8 +177,8 @@
         </div>
     </div>
 </div>
-<!-- BEST OFFERS END -->
-<!-- ABOUT US -->
+@*BEST OFFERS END
+    ABOUT US*@
 <a id="hyperlink-au"></a>
 <div id="aboutus-container">
     <div id="au-bg-img">
@@ -177,5 +193,4 @@
         </div>
     </div>
 </div>
-<!-- ABOUT US END -->
-</html>
+@*ABOUT US END*@ 
