@@ -11,8 +11,10 @@ namespace CarRental.Data
 {
     public class ApplicationUser : IdentityUser
     {
-
-        public int? Age { get; set; }
+        [Required]
+        [MinLength(10)]
+        [MaxLength(10)]
+        public string TelephoneNumber { get; set; }
 
 
         [Required]
