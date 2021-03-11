@@ -1,5 +1,4 @@
-﻿using CarRental.Data.Enumerations;
-using CarRental.Data.Models;
+﻿using CarRental.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -37,6 +36,7 @@ namespace CarRental.Data
              .WithOne(au => au.ReservationInfo)
               .OnDelete(DeleteBehavior.NoAction);
 
+            base.OnModelCreating(builder);
 
         }
     }
