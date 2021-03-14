@@ -69,8 +69,8 @@ namespace CarRental.Data.Migrations
 
                     b.Property<string>("TelephoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(10)")
-                        .HasMaxLength(10);
+                        .HasColumnType("nvarchar(11)")
+                        .HasMaxLength(11);
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
