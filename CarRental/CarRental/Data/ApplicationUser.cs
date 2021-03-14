@@ -12,8 +12,8 @@ namespace CarRental.Data
     public class ApplicationUser : IdentityUser
     {
         [Required]
-        [MinLength(10)]
-        [MaxLength(10)]
+        [MinLength(11)]
+        [MaxLength(11)]
         public string TelephoneNumber { get; set; }
 
 
