@@ -22,8 +22,8 @@ namespace CarRental.ViewModels.Home
 
 
         [Required]
-        [MaxLength(10)]
-        [MinLength(10)]
+        [MaxLength(11)]
+        [MinLength(11)]
         public string TelephoneNumber { get; set; }
 
 
